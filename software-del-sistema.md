@@ -69,7 +69,7 @@ exec-once = mako
 
 Waybar soporta módulos para estos elementos. Asegurate de tener una configuración básica como esta:
 
-`~/.config/waybar/config`
+📁 `~/.config/waybar/config`
 
 ```json
 {
