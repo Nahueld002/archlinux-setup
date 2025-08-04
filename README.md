@@ -6,20 +6,25 @@ Este repositorio contiene documentos separados por tema, cada uno abordando una 
 
 ## Contenido
 
-- [Software del Sistema](software-del-sistema.md)  
-  Configuración de audio, notificaciones, brillo, servicios básicos y módulos Waybar.
+1. [Instalación de Arch Linux (UEFI + Dual Boot)](instalacion-archlinux.md)  
+   Guía paso a paso desde la Live ISO hasta la detección de Windows en GRUB.
 
-- [Software General](software-general.md)  
-  Aplicaciones comunes: navegador, editor de texto, suite de oficina, chat.
+2. [Software del Sistema](software-del-sistema.md)  
+   Configuración de audio, notificaciones, brillo, servicios básicos y módulos Waybar.
 
-- [Software para Hyprland](software-hyprland.md)  
-  Herramientas visuales, lanzadores, temas y personalización del entorno gráfico.
+3. [Software para Hyprland](software-hyprland.md)  
+   Herramientas visuales, lanzadores, temas y personalización del entorno gráfico.
 
-- [Configuración Básica de Waybar](configuracion-basica-waybar.md)  
-  Configuración básica de `Waybar`: módulos, estilo, autostart y recarga.
+4. [Configuración Básica de Waybar](configuracion-basica-waybar.md)  
+   Configuración básica de `Waybar`: módulos, estilo, autostart y recarga.
 
-- [Terminal Avanzado](terminal-avanzado.md)  
-  Personalización con ZSH, Oh My Zsh, Eza, Starship y alias útiles.
+5. [Terminal Avanzado](terminal-avanzado.md)  
+   Personalización con ZSH, Oh My Zsh, Eza, Starship y alias útiles.
+
+6. [Software General](software-general.md)  
+   Aplicaciones comunes: navegador, editor de texto, suite de oficina, chat.
+
+---
 
 ## Cómo usar
 
@@ -29,5 +34,3 @@ Cloná el repositorio y navegá los archivos `.md` para aplicar cada configuraci
 git clone https://github.com/Nahueld002/archlinux-setup.git
 cd archlinux-setup
 ```
-
----
