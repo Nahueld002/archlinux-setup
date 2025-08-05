@@ -113,6 +113,7 @@ sudo systemctl enable --now bluetooth.service
 ---
 
 ## Monitor de recursos con Bottom (btm)
+`bottom` (también conocido como btm) es un monitor de sistema interactivo en terminal, moderno, rápido y altamente visual. 
 
 Instalación con yay:
 
@@ -125,3 +126,27 @@ Uso:
 ```
 btm
 ```
+
+---
+
+## Software de Sistema Visual – Qt6ct
+
+Herramienta gráfica para configurar el tema, fuentes, iconos y colores de las aplicaciones Qt6 (como VLC, VirtualBox, qBittorrent) cuando usás un entorno no-KDE como Hyprland.
+
+    ⚠️ Es fundamental para que las apps Qt no se vean fuera de lugar en tu sistema.
+
+Instalación:
+
+```
+sudo pacman -S qt6ct
+```
+
+Ejecución:
+
+```
+qt6ct
+```
+
+Desde ahí podés elegir tema, fuente, iconos, escalado, etc.
+
+---

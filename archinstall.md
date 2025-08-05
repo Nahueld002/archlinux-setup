@@ -158,6 +158,23 @@ reboot
 
 Seleccionar Arch Linux desde el gestor de arranque GRUB.
 
+### Iniciar Sesión
+
+Ingresar el nombre de usuario y su contraseña
+
+### Actualizar el sistema
+
+```
+sudo pacman -Syu
+```
+
+### Ejecutar Hyprland
+Escribir en la terminal:
+
+```
+Hyprland
+```
+
 ---
 
 ¿Terminaste de instalar Arch Linux con `archinstall`?
