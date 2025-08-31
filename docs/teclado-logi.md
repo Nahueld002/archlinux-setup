@@ -154,7 +154,7 @@ yay -S solaar-git
 # sudo tee /etc/udev/rules.d/99-uinput.rules <<EOF
 # KERNEL=="uinput", MODE="0660", GROUP="input", OPTIONS+="static_node=uinput"
 # EOF
-
+```
 ---
 
 ## ✅ Resumen final
