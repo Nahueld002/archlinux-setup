@@ -1,8 +1,10 @@
+
 # 🧩 Logitech POP Keys & POP Mouse en Arch Linux (Bluetooth)
 
 Guía para instalar y configurar teclado y mouse **Logitech POP** en **Arch Linux** vía **Bluetooth**.
 
-> ⚠️ **Importante**: Estos dispositivos **no usan receptor USB** (Unifying ni Bolt), por lo tanto, **Solaar no aplica** en este caso.
+> ⚠️ **Importante**: Estos dispositivos **no usan receptor USB** (Unifying ni Bolt), por lo tanto, se conectan directamente por **Bluetooth**.  
+> Sin embargo, podés instalar **Solaar** si querés acceder a opciones avanzadas de configuración de teclas y funciones.
 
 ---
 
@@ -122,11 +124,44 @@ Usá el mismo flujo con su dirección MAC correspondiente (`XX:XX:XX:XX:XX:XX`).
 
 ---
 
+## 🛠️ Opcional: Configuración avanzada con Solaar
+
+Aunque **no es necesario para usar el POP Keys/Mouse**, podés instalar **Solaar** para acceder a opciones adicionales:
+
+```bash
+sudo pacman -Syu python-typing_extensions
+yay -S solaar-git
+
+# ⚠️ Lo siguiente es opcional y aún no probado.
+# Se deja como referencia si se necesitan reglas extra para uinput:
+
+# Ver grupos y usuario actual
+# getent group input
+
+# Agregar tu usuario al grupo input
+# sudo gpasswd -a "$USER" input
+
+# Verificar módulo uinput
+# lsmod | grep uinput
+
+# Cargar el módulo manualmente
+# sudo modprobe uinput
+
+# Cargarlo automáticamente en cada inicio
+# echo "uinput" | sudo tee /etc/modules-load.d/uinput.conf
+
+# Regla udev para permisos en /dev/uinput
+# sudo tee /etc/udev/rules.d/99-uinput.rules <<EOF
+# KERNEL=="uinput", MODE="0660", GROUP="input", OPTIONS+="static_node=uinput"
+# EOF
+
+---
+
 ## ✅ Resumen final
 
-* 🔌 **Solaar**: No aplica (solo útil con receptores Bolt/Unifying).
-* 🧭 **bluetoothctl**: Método recomendado para conexión estable y manual.
+* 🔌 **Bluetoothctl**: Método recomendado para conexión estable y manual.
 * 🖼️ **Blueman**: GUI opcional si preferís entorno gráfico.
+* ⚙️ **Solaar**: Herramienta opcional para funciones adicionales (no requerida).
 * 🚫 Funciones especiales (emoji, dictado): No disponibles en Linux.
 * ✅ Funciones básicas (teclas, multimedia, DPI): Funcionan correctamente.
 
@@ -146,5 +181,4 @@ trust XX:XX:XX:XX:XX:XX
 
 ## 📁 Créditos y referencias
 
-* Tested on: Arch Linux (kernel 6.x), Logitech POP Keys / Mouse
 * Documentado por: \[Nahueld002]
