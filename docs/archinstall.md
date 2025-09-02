@@ -1,4 +1,3 @@
-````markdown
 # 🐧 Instalación de Arch Linux con `archinstall` (UEFI + Dual Boot)
 
 Este documento detalla el uso del instalador `archinstall` para configurar Arch Linux, conservando una instalación previa de Windows en dual boot.
@@ -138,7 +137,7 @@ Hyprland
 
 -----
 
-¿Todo salió bien? ¡Genial\! Continuá con la configuración desde el [paso 9: conexión Wi-Fi en el sistema instalado](https://www.google.com/search?q=instalacion-archlinux.md%239-conectarse-a-wi-fi-en-sistema-ya-instalado) en el documento principal.
+➡️ Continuá desde el [paso 9: conexión Wi-Fi en el sistema instalado](instalacion-archlinux.md#9-conectarse-a-wi-fi-en-sistema-ya-instalado) en el documento principal `instalacion-archlinux.md`.
 
 ```
 ```
