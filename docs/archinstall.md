@@ -137,8 +137,7 @@ Hyprland
 
 -----
 
-➡️ Continuá desde el [paso 9: conexión Wi-Fi en el sistema instalado](docs/instalacion-archlinux.md#9-conectarse-a-wi-fi-en-sistema-ya-instalado)
-
+➡️ Continuá desde el [paso 9: conexión Wi-Fi en el sistema instalado](instalacion-archlinux.md#9-conectarse-a-wi-fi-en-sistema-ya-instalado)
 ---
 
 ## 📁 Créditos y referencias
