@@ -31,7 +31,7 @@ station wlan0 get-networks
 station wlan0 connect "TuRed"
 exit
 ping google.com               # Verificar la conexión
-````
+```
 
 -----
 
