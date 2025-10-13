@@ -8,7 +8,7 @@ Este documento detalla el uso del instalador `archinstall` para configurar Arch 
 
 ```bash
 archinstall
-````
+```
 
 ### Opciones en el instalador
 
@@ -121,7 +121,6 @@ reboot
   - Iniciá sesión con el usuario y la contraseña que creaste.
   - **Actualizá el sistema**:
 
-<!-- end list -->
 
 ```bash
 sudo pacman -Syu
@@ -129,7 +128,6 @@ sudo pacman -Syu
 
   - **Iniciá Hyprland**:
 
-<!-- end list -->
 
 ```bash
 Hyprland
@@ -137,7 +135,7 @@ Hyprland
 
 -----
 
-➡️ Continuá desde el [paso 9: conexión Wi-Fi en el sistema instalado](instalacion_archlinux.md#9-conectarse-a-wi-fi-en-sistema-ya-instalado)
+➡️ Continuá desde el [paso 9: conexión Wi-Fi en el sistema instalado](instalacion_archlinux.md#9--conectarse-a-wi-fi-en-el-sistema-instalado)
 
 ---
 
