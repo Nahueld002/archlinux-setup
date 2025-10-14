@@ -94,8 +94,7 @@ En los entornos Wayland como Hyprland, se requieren herramientas específicas pa
     sudo pacman -S ranger w3m highlight atool mediainfo poppler ffmpegthumbnailer
     ```
 
-> 💡 **Tip:** Podés generar la configuración editable de Ranger con  
-> `ranger --copy-config=all`  
+> 💡 **Tip:** Podés generar la configuración editable de Ranger con `ranger --copy-config=all`  
 > Esto crea los archivos en `~/.config/ranger/` para personalizar atajos, vistas previas y temas.
 
 ---
