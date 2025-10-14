@@ -19,7 +19,9 @@ Durante la instalación, si te pide elegir un proveedor para resolvconf, la opci
 
 Para poder ejecutar la VPN en segundo plano, la contraseña debe estar en un archivo de configuración.
 
+```bash
 sudo nano /etc/openfortivpn/config
+```
 
 Agregá los siguientes parámetros (reemplazá los valores con los de tu empresa):
 
