@@ -37,7 +37,9 @@ Ajusta Permisos de Seguridad: Es crucial limitar la lectura del archivo, ya que 
 
 ## 3. Seguridad
 
-`sudo chmod 600 /etc/openfortivpn/config`
+```bash
+sudo chmod 600 /etc/openfortivpn/config
+```
 
 # 4. Habilitar y Configurar systemd-resolved
 
