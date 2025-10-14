@@ -78,14 +78,7 @@ En los entornos Wayland como Hyprland, se requieren herramientas específicas pa
     ```bash
     sudo pacman -S jq gnome-disk-utility
     ```
-
-### Utilidades de Terminal
-
-* **Ranger**: Gestor de archivos en terminal
-
-    ```bash
-        sudo pacman -S ranger w3m highlight atool mediainfo poppler ffmpegthumbnailer    
-    ```
+    
 ### Utilidades de Terminal
 
 * **Ranger**: Gestor de archivos en terminal
