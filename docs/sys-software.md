@@ -109,13 +109,13 @@ Controla los perfiles de energía (rendimiento, equilibrado, ahorro) en tu lapto
 
 1.  **Instalación**:
     ```bash
-    sudo pacman -S mako
+    sudo pacman -S swaync
     ```
 2.  **Autostart**:
-    Para que las notificaciones funcionen, asegúrate de agregar Mako a tu archivo de autostart.
+    Para que las notificaciones funcionen, asegúrate de agregar Swaync a tu archivo de autostart.
     ```bash
     # ~/.config/hypr/autostart.conf
-    exec-once = mako
+    exec-once = swaync &
     ```
 
 ### **Bottom (btm) - Monitor de recursos**
@@ -161,12 +161,12 @@ Soporte de sistemas de archivos
     sudo pacman -S udiskie
     ```
 
-2. Compresión y descompresión2. 
+2. Compresión y descompresión. 
 
-```bash
-sudo pacman -S unzip unrar p7zip file-roller
-```
----
+    ```bash
+    sudo pacman -S unzip unrar p7zip file-roller
+    ```
+    ---
 ## 🔋 7. Optimización de energía (especialmente para laptops)
 ### TLP
 ```bash
