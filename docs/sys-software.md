@@ -151,6 +151,30 @@ Controla los perfiles de energía (rendimiento, equilibrado, ahorro) en tu lapto
 
 ---
 
+## 💾 6. Soporte de archivos y almacenamiento
+Soporte de sistemas de archivos
+
+1. Para leer y escribir unidades externas:
+
+    ```bash
+    sudo pacman -S ntfs-3g exfatprogs dosfstools
+    sudo pacman -S udiskie
+    ```
+
+2. Compresión y descompresión2. 
+
+```bash
+sudo pacman -S unzip unrar p7zip file-roller
+```
+---
+## 🔋 7. Optimización de energía (especialmente para laptops)
+### TLP
+```bash
+sudo pacman -S tlp tlp-rdw powertop
+sudo systemctl enable --now tlp
+```
+
+---
 ## 📁 Créditos y referencias
 
 * Documentado por: \[Nahueld002]
