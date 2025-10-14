@@ -90,6 +90,13 @@ En los entornos Wayland como Hyprland, se requieren herramientas específicas pa
 > 💡 **Tip:** Podés generar la configuración editable de Ranger con `ranger --copy-config=all`  
 > Esto crea los archivos en `~/.config/ranger/` para personalizar atajos, vistas previas y temas.
 
+Si usas Kitty como terminal:
+- En tu `~/.config/ranger/rc.conf`, asegurate de tener en la última línea:
+
+```bash
+set preview_images true
+set preview_images_method kitty
+```
 ---
 
 ## 📁 Créditos y referencias
