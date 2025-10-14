@@ -60,7 +60,7 @@ sudo pacman -Syu
 3.  **Instalar Oh My Zsh**:
 
     ```bash
-    sh -c "$(curl -fsSL [https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh](https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh))"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     ```
 
 4.  **Instalar plugins recomendados**:
@@ -70,11 +70,11 @@ sudo pacman -Syu
     cd ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins
 
     # Clonar los repositorios de los plugins
-    git clone [https://github.com/zsh-users/zsh-completions](https://github.com/zsh-users/zsh-completions)
-    git clone [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-    git clone [https://github.com/zsh-users/zsh-syntax-highlighting.git](https://github.com/zsh-users/zsh-syntax-highlighting.git)
-    git clone [https://github.com/zdharma-continuum/fast-syntax-highlighting.git](https://github.com/zdharma-continuum/fast-syntax-highlighting.git)
-    git clone --depth 1 -- [https://github.com/marlonrichert/zsh-autocomplete.git](https://github.com/marlonrichert/zsh-autocomplete.git)
+    git clone https://github.com/zsh-users/zsh-completions
+    git clone https://github.com/zsh-users/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+    git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git
+    git clone --depth 1 https://github.com/marlonrichert/zsh-autocomplete.git
     ```
 
 5.  **Editar la configuración de ZSH**:
