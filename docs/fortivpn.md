@@ -105,12 +105,11 @@ sudo pacman -S remmina freerdp
 2. Abrí Remmina desde el menú de aplicaciones.
 3. Creá una nueva conexión con el ícono ➕.
 4. Configurá los parámetros:
-5. Configura los Parámetros:
     - Protocolo: Selecciona RDP - Remote Desktop Protocol.
     - Servidor: Introduce la dirección IP interna de tu PC de oficina (la IP que tiene dentro de la red corporativa, no la IP que te asignó la VPN).
     - Nombre de usuario y Contraseña: Ingresa las credenciales de la cuenta de usuario que usas para iniciar sesión en tu PC de oficina con Windows.
     - Conectar: Haz clic en "Guardar y Conectar" para iniciar la sesión remota a través del túnel VPN activo.
-
+5. Conectá — presioná “Guardar y Conectar”.
 ---
 
 ## 📁 Créditos y referencias
