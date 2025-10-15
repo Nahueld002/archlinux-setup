@@ -99,6 +99,16 @@ set preview_images_method kitty
 ```
 ---
 
+## 6. Seguridad
+
+* **Bitwarden**: Gestor de contraseñas de código abierto.
+
+    ```bash
+    sudo pacman -S bitwarden
+    ```
+
+---
+
 ## 📁 Créditos y referencias
 
 * Documentado por: \[Nahueld002]
