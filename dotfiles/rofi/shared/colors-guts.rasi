@@ -1,0 +1,11 @@
+/* Paleta – Berserk Guts */
+* {
+  background:       rgba(14,14,16,0.9);  /* gris oscuro translúcido */
+  background-solid: #0E0E10;             /* sólido equivalente */
+  background-alt:   rgba(29,29,33,0.8);
+
+  foreground:       #FFFFFF;
+  selected:         rgba(139,0,0,0.9);   /* rojo berserk */
+  active:           rgba(255,77,77,0.9);
+  urgent:           rgba(102,0,0,0.9);
+}

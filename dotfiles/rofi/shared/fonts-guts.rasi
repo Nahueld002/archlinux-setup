@@ -1,0 +1,4 @@
+/* Tipografía – Berserk Guts */
+* {
+  font: "JetBrainsMono Nerd Font mono 11";
+}

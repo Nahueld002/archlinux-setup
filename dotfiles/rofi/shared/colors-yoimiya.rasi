@@ -1,0 +1,11 @@
+/* Paleta - Yoimiya */
+* {
+    background:         rgba(91,51,46,0.9);   
+    background-solid:   #a15533;              
+    background-alt:     rgba(183,63,45,0.9);  
+
+    foreground:         #F4DDD0;              /* Blanco/Crema */
+    selected:           rgba(255,69,0,0.9);   /* Rojo de Yoimiya */
+    active:             rgba(242,166,95,0.9);  /* Naranja/Dorado de Yoimiya */
+    urgent:             rgba(255,69,0,0.9);   /* Rojo de Yoimiya */
+}

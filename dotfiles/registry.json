@@ -1,0 +1,42 @@
+{
+  "wallpaperToProfile": {
+    "berserk-guts.jpg": "berserk",
+    "berserk-guts.png": "berserk",
+    "default.jpg": "default",
+    "default.png": "default",
+    "yoimiya.jpg": "yoimiya",
+    "yoimiya.png": "yoimiya"
+  },
+  "profiles": {
+    "berserk": {
+      "waybarConfig": "~/.config/waybar/themes/config-guts",
+      "waybarStyle":  "~/.config/waybar/styles/style-guts.css",
+      "lookConf":     "~/.config/waybar/looks/look-guts.conf",
+      "rofiTheme":    "~/.config/rofi/themes/theme-berserk-guts.rasi",
+      "rofiColors":   "~/.config/rofi/shared/colors-guts.rasi",
+      "rofiFonts":    "~/.config/rofi/shared/fonts-guts.rasi",
+      "kittyTheme":   "~/.config/kitty/hachiko-theme.conf",
+      "fastfetchIcon":"~/.config/fastfetch/icon/marca-sacrificio.png"
+    },
+    "default": {
+      "waybarConfig": "~/.config/waybar/themes/config-default",
+      "waybarStyle":  "~/.config/waybar/styles/style-default.css",
+      "lookConf":     "~/.config/waybar/looks/look-default.conf",
+      "rofiTheme":    "~/.config/rofi/themes/theme-default.rasi",
+      "rofiColors":   "",
+      "rofiFonts":    "",
+      "kittyTheme":   "~/.config/kitty/default-theme.conf",
+      "fastfetchIcon":"~/.config/fastfetch/icon/marca-sacrificio.png"
+    },
+    "yoimiya":{
+      "waybarConfig": "~/.config/waybar/themes/config-yoimiya",
+      "waybarStyle":  "~/.config/waybar/styles/style-yoimiya.css",
+      "lookConf":     "~/.config/waybar/looks/look-yoimiya.conf",
+      "rofiTheme":    "~/.config/rofi/themes/theme-yoimiya.rasi",
+      "rofiColors":   "~/.config/rofi/shared/colors-yoimiya.rasi",
+      "rofiFonts":    "~/.config/rofi/shared/fonts-yoimiya.rasi",
+      "kittyTheme":   "~/.config/kitty/icorange-theme.conf",
+      "fastfetchIcon":"~/.config/fastfetch/icon/yoimiya.png"
+    }
+  }
+}

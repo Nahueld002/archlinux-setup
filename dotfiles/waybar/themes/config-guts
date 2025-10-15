@@ -1,0 +1,186 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 34,                   // Altura como en el original
+  "width": 1728,                  // 90% de la resolución de pantalla (res: 1920)
+  "margin-top": 10,
+
+  // Modules layout
+  "modules-left": ["custom/launcher", "hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "backlight",
+    "pulseaudio",
+    "custom/microphone",
+    "custom/media",
+    "custom/bluetooth",
+    "network",
+    "battery",
+    "power-profiles-daemon",
+    "tray",
+    "custom/notification",
+    "custom/power"
+  ],
+
+  // ====== Modules definition ======
+
+  // Lanzador: ahora abre rofi (no nwg-drawer)
+  "custom/launcher": {
+    "format": "󰣇",
+    "on-click": "rofi -show drun"
+  },
+
+  // Reloj
+  "clock": {
+    "tooltip": true,
+    "tooltip-format": "<tt><big>{calendar}</big></tt>",
+    "format": "{:%A %d/%m/%y %H:%M}",
+    "format-alt": "{:%A %d de %B del %Y}"
+  },
+
+  // Workspaces: incorporar active/urgent + persistentes del original
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "active": "󱓻",
+      "urgent": "󱓻"
+    },
+    "persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+
+  // Backlight: mantener
+  "backlight": {
+    "tooltip": true,
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "󰃞", "󰃝", "󰃟", "󰃠"],
+    "device": "intel_backlight"
+  },
+
+  // Audio: mantener (pulseaudio + wpctl)
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-bluetooth-muted": "󰖁 {icon}",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "󰋋",
+      "headset": "󰋎",
+      "phone": "󰏲",
+      "portable": "󰏲",
+      "default": ["", "", " "]
+    },
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+    "tooltip": true
+  },
+
+  // Micrófono: mantener
+  "custom/microphone": {
+    "exec": "~/.config/waybar/scripts/microphone.sh",
+    "return-type": "json",
+    "interval": 1,
+    "tooltip": true,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+  },
+
+  // Bluetooth: mantener
+  "custom/bluetooth": {
+    "exec": "~/.config/waybar/scripts/bluetooth.sh",
+    "return-type": "json",
+    "interval": 1,
+    "tooltip": true,
+    //"on-click": "blueman-manager"
+    "on-click": "~/.config/rofi/scripts/rofi-bluetooth-menu.sh &"
+  },
+
+  // Red: reemplazada por la del original (iconos, tooltips, clics rofi)
+  "network": {
+    "format-wifi": "{icon}",
+    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰖪",
+    "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "~/.config/rofi/scripts/rofi-wifi-menu.sh &",
+    "interval": 5,
+    "nospacing": 1
+  },
+
+  // Batería: mantener
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": " {capacity}%",
+    "tooltip-format": "<span color='#F1F1F1'>{time}</span>",
+    "format-icons": ["<span color='#8b0000'>󰁺</span>", "󰁼", "󰁾", "󰂀", "󰁹"],
+    "interval": 5
+  },
+
+ /* // Perfiles de energía: mantener
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Batería en modo: {profile}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "󰋑",
+      "performance": "󱐋",
+      "balanced": "󰗑",
+      "power-saver": "󰋑"
+    }
+  },*/
+
+"custom/notification": {
+  "format": "󰂚",
+  "tooltip": false,
+  "on-click": "swaync-client -t",
+  "on-click-right": "swaync-client -d",
+  "exec": "swaync-client -swb",
+  "return-type": "json"
+}
+
+  // Menú de energía: cambiar a rofi (como el original)
+  "custom/power": {
+    "format": "󰤆",
+    "tooltip": false,
+    "on-click": "~/.config/rofi/scripts/rofi-power-menu.sh &"
+  }
+
+  /* ====== Multimedia (para futura personalización con Spotify) ======
+  ,"custom/media": {
+    "format": "{icon} {text}",
+    "return-type": "json",
+    "max-length": 40,
+    "format-icons": {
+      "spotify": "",
+      "default": "🎜"
+    },
+    "escape": true,
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
+  }
+  */
+}

@@ -1,0 +1,5 @@
+/* Tipografía – Yoimiya*/
+* {
+  font: "Noto Sans Mono 11";
+}
+

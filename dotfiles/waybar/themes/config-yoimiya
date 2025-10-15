@@ -1,0 +1,194 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 34,                   // Igual que el original
+  "width": 1728,                  // ~90% de 1920
+  "margin-top": 10,
+
+  // ===== Layout =====
+  "modules-left":   ["custom/launcher", "hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right":  [
+    "backlight",
+    "pulseaudio",
+    "custom/microphone",
+    "custom/media",
+    "custom/bluetooth",
+    "network",
+    "battery",
+    "power-profiles-daemon",
+    "tray",
+    "custom/notification",
+    "custom/power"
+  ],
+
+  // ===== Módulos =====
+
+  // Lanzador: abre rofi
+  "custom/launcher": {
+    "format": "󰣇",
+    "on-click": "rofi -show drun",
+    "tooltip": true,
+    "tooltip-format": "<span color='#F5F5C8'>Abrir launcher</span>"
+  },
+
+  // Reloj (paleta aplicada en tooltip)
+  "clock": {
+    "tooltip": true,
+    "tooltip-format": "<tt><big><span color='#F5F5C8'>{calendar}</span></big></tt>",
+    "format": "{:%A %d/%m/%y %H:%M}",
+    "format-alt": "{:%A %d de %B del %Y}"
+  },
+
+  // Workspaces: iconos y persistentes
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "active": "󱓻",
+      "urgent": "󱓻"
+    },
+    "persistent_workspaces": {
+      "1": [], "2": [], "3": [], "4": [], "5": []
+    },
+    "tooltip": true,
+    "tooltip-format": "<span color='#F2A65F'>Workspaces activos</span>"
+  },
+
+  // Brillo
+  "backlight": {
+    "tooltip": true,
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "󰃞", "󰃝", "󰃟", "󰃠"],
+    "device": "intel_backlight",
+    "on-scroll-up":   "brightnessctl set 5%+",
+    "on-scroll-down": "brightnessctl set 5%-"
+  },
+
+  // Audio
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-bluetooth-muted": "󰖁 {icon}",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "󰋋",
+      "headset": "󰋎",
+      "phone": "󰏲",
+      "portable": "󰏲",
+      "default": ["", "", " "]
+    },
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+    "tooltip": true,
+    "tooltip-format": "<span color='#F5F5C8'>{desc}</span>"
+  },
+
+  // Micrófono
+  "custom/microphone": {
+    "exec": "~/.config/waybar/scripts/microphone.sh",
+    "return-type": "json",
+    "interval": 1,
+    "tooltip": true,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "tooltip-format": "<span color='#F5F5C8'>Mic: {text}</span>"
+  },
+
+  // Bluetooth
+  "custom/bluetooth": {
+    "exec": "~/.config/waybar/scripts/bluetooth.sh",
+    "return-type": "json",
+    "interval": 1,
+    "tooltip": true,
+    "on-click": "~/.config/rofi/scripts/rofi-bluetooth-menu.sh &",
+    "tooltip-format": "<span color='#F5F5C8'>{text}</span>"
+  },
+
+  // Red (con tooltips alineados a paleta)
+  "network": {
+    "format-wifi": "{icon}",
+    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰖪",
+    "tooltip-format-wifi": "<span color='#F5F5C8'>{icon} {essid}</span>\n<span color='#F2A65F'>⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}</span>",
+    "tooltip-format-ethernet": "<span color='#F5F5C8'>󰀂  {ifname}</span>\n<span color='#F2A65F'>⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}</span>",
+    "tooltip-format-disconnected": "<span color='#FF4500'>Desconectado</span>",
+    "on-click": "~/.config/rofi/scripts/rofi-wifi-menu.sh &",
+    "interval": 5,
+    "nospacing": 1
+  },
+
+  // Batería
+  "battery": {
+    "states": { "warning": 30, "critical": 15 },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": " {capacity}%",
+    "tooltip-format": "<span color='#F5F5C8'>{time}</span>",
+    "format-icons": [
+      "<span color='#FF6347'>󰁺</span>",
+      "󰁼",
+      "󰁾",
+      "󰂀",
+      "󰁹"
+    ],
+    "interval": 5
+  },
+
+  // Power Profiles
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip": true,
+    "tooltipo-format": "<span color='#F5F5C8'>{profile}</span>",
+    "format-icons": {
+      "default": "󰋑",
+      "performance": "󱐋",
+      "balanced": "󰗑",
+      "power-saver": "󰋑"
+    }
+  },
+
+  // Notificaciones
+  "custom/notification": {
+    "format": "󰂚",
+    "on-click": "nwg-panel -p notifications",
+    "tooltip": true,
+    "tooltip-format": "<span color='#F5F5C8'>Notificaciones</span>"
+  },
+
+  // Menú de energía (rofi)
+  "custom/power": {
+    "format": "󰤆",
+    "tooltip": false,
+    "on-click": "~/.config/rofi/scripts/rofi-power-menu.sh &"
+  }
+
+  /* ====== Multimedia (futuro) ======
+  ,"custom/media": {
+    "format": "{icon} {text}",
+    "return-type": "json",
+    "max-length": 40,
+    "format-icons": {
+      "spotify": "",
+      "default": "🎜"
+    },
+    "escape": true,
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null",
+    "tooltip": true,
+    "tooltip-format": "<span color='#F5F5C8'>{text}</span>"
+  }
+  */
+}

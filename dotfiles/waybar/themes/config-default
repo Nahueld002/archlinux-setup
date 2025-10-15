@@ -1,0 +1,74 @@
+{
+  "layer": "top",
+  "position": "top",
+  "width": 1161, // ~90% de 1290px
+  "margin-top": 10,
+
+  // === Layout de módulos ===
+  "modules-left": ["custom/launcher", "hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["backlight", "pulseaudio", "custom/microphone", "battery", "network", "custom/notification"],
+
+  // === Módulos ===
+  "custom/launcher": {
+    "format": "<span color='#1793d1'>󰣇</span>",
+    "on-click": "nwg-drawer",
+    "tooltip": false
+  },
+
+  "custom/notification": {
+    "format": "<span color='#1793d1'>󰂚</span>",
+    "on-click": "nwg-panel -p notifications",
+    "tooltip": true
+  },
+
+  "custom/microphone": {
+    "exec": "~/.config/waybar/scripts/microphone.sh",
+    "return-type": "json",
+    "interval": 3,
+    "tooltip": true,
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+  },
+
+  "clock": {
+    "tooltip": true,
+    "tooltip-format": "{:%A %d de %B del %Y}",
+    "format": "<span color='#1793d1'>{:%d/%m/%y %H:%M}</span>"
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": "<span color='#1793d1'>󰂄</span> {capacity}%",
+    "format-alt": "{icon} <span color='#F1F1F1'>{time}</span>",
+    "format-icons": [
+      "<span color='#1565c0'>󰁺</span>",
+      "<span color='#1976d2'>󰁼</span>",
+      "<span color='#1e88e5'>󰁾</span>",
+      "<span color='#42a5f5'>󰂀</span>",
+      "<span color='#90caf9'>󰁹</span>"
+    ],
+    "interval": 1
+  },
+
+  "pulseaudio": {
+    "format": "<span color='#1793d1'>{icon}</span> {volume}%",
+    "format-muted": "<span color='#8b0000'>󰝟</span> {volume}%",
+    "format-icons": ["", "", ""],
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  },
+
+  "network": {
+    "format-wifi": "<span color='#1793d1'></span> {bandwidthDownBits}",
+    "format-ethernet": "<span color='#1793d1'>󰈀</span> {ipaddr}",
+    "format-disconnected": "󰣽 Sin red",
+    "interval": 10,
+    "tooltip-format": "{essid}"
+  },
+
+  "backlight": {
+    "tooltip": true,
+    "format": "<span color='#1793d1'>{icon}</span> {percent}%",
+    "format-icons": ["", "󰃞", "󰃝", "󰃟", "󰃠"],
+    "device": "intel_backlight"
+  }
+}

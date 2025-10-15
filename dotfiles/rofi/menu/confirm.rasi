@@ -1,0 +1,67 @@
+/* confirm-menu.rasi — diálogo de confirmación minimal */
+@import "~/.config/rofi/shared/colors.rasi"
+@import "~/.config/rofi/shared/fonts.rasi"
+
+configuration { show-icons: false; }
+
+window {
+  transparency: "real";
+  location: center;
+  anchor: center;
+  fullscreen: false;
+  width: 360px;
+  border: 2px;
+  border-radius: 20px;
+  border-color: @selected;
+  background-color: @background;
+  cursor: "default";
+}
+
+mainbox {
+  enabled: true;
+  spacing: 0px;
+  margin: 0px;
+  padding: 20px;
+  background-color: transparent;
+  children: [ "listview" ];
+}
+
+listview {
+  enabled: true;
+  columns: 2;         /* Sí / No en dos columnas */
+  lines: 1;
+  cycle: true;
+  scrollbar: false;
+  layout: vertical;
+  spacing: 12px;
+  background-color: transparent;
+  cursor: "default";
+}
+
+element {
+  enabled: true;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: @background-alt;
+  text-color: @foreground;
+  cursor: pointer;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+  cursor: inherit;
+  vertical-align: 0.5;
+  horizontal-align: 0.5;  /* centrado */
+  font: "JetBrainsMono Nerd Font 14";
+}
+
+element normal.normal,
+element alternate.normal { background-color: @background-alt; text-color: @foreground; }
+element selected.normal   { background-color: @selected;       text-color: @foreground; }
+element normal.active,
+element alternate.active,
+element selected.urgent   { background-color: @active;         text-color: @foreground; }
+element normal.urgent,
+element alternate.urgent,
+element selected.active   { background-color: @urgent;         text-color: @foreground; }

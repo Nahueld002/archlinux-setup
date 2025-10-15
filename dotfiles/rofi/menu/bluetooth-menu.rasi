@@ -1,0 +1,93 @@
+/* bluetooth-menu.rasi — exclusivo para rofi-bluetooth-menu.sh */
+@import "~/.config/rofi/shared/colors.rasi"
+@import "~/.config/rofi/shared/fonts.rasi"
+
+window {
+  transparency: "real";
+  location: center;
+  anchor: center;
+  fullscreen: false;
+  width: 560px;
+
+  border: 2px;
+  border-radius: 20px;
+  border-color: @selected;
+
+  background-color: @background;
+}
+
+mainbox {
+  enabled: true;
+  spacing: 0px;
+  background-color: transparent;
+  orientation: vertical;
+  children: [ "inputbar", "listbox" ];
+}
+
+listbox {
+  spacing: 20px;
+  padding: 20px;
+  background-color: transparent;
+  orientation: vertical;
+  children: [ "message", "listview" ];
+}
+
+inputbar {
+  enabled: true;
+  spacing: 10px;
+  padding: 20px 18px;
+  background-color: transparent;
+  background-image: url("~/.config/rofi/images/default.jpg", width);
+  text-color: @foreground;
+  orientation: horizontal;
+  children: [ "textbox-prompt-colon", "dummy" ];
+}
+textbox-prompt-colon {
+  enabled: true;
+  expand: false;
+  str: "";
+  padding: 10px 14px;
+  border-radius: 100%;
+  background-color: @background-alt;
+  text-color: inherit;
+}
+dummy { expand: true; background-color: transparent; }
+
+listview {
+  lines: 14;
+  fixed-height: true;
+  columns: 1;
+  background-color: transparent;
+  text-color: @foreground;
+}
+
+element {
+  padding: 8px 10px;
+  border-radius: 12px;
+  background-color: transparent;
+  text-color: @foreground;
+}
+element normal.normal   { background-color: inherit;   text-color: inherit; }
+element selected.normal { background-color: @selected; text-color: @foreground; }
+element normal.urgent   { background-color: @urgent;   text-color: @foreground; }
+element normal.active   { background-color: @active;   text-color: @foreground; }
+
+element-text, element-icon {
+  horizontal-align: 0.0;
+  background-color: transparent;
+  text-color: @foreground;
+}
+
+message { background-color: transparent; }
+textbox {
+  padding: 10px;
+  border-radius: 12px;
+  background-color: @background-alt;
+  text-color: @foreground;
+}
+error-message {
+  padding: 12px;
+  border-radius: 20px;
+  background-color: @background;
+  text-color: @foreground;
+}
