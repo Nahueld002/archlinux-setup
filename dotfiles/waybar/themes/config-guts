@@ -161,7 +161,7 @@
   "on-click-right": "swaync-client -d",
   "exec": "swaync-client -swb",
   "return-type": "json"
-}
+},
 
   // Menú de energía: cambiar a rofi (como el original)
   "custom/power": {
